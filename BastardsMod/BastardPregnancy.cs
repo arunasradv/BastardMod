@@ -130,7 +130,7 @@ namespace BastardsMod
                     {
                         TextObject textObject = new TextObject("{=pw4cUPEn}{MOTHER.LINK} has delivered stillborn.", null);
                         StringHelpers.SetCharacterProperties("MOTHER", mother.CharacterObject, textObject, false);
-                        InformationManager.DisplayMessage(new InformationMessage(textObject.ToString()));
+                        InformationManager.DisplayMessage(new InformationMessage(textObject.ToString(), Color.ConvertStringToColor("hA0A00000")));
                         num2++;
                     }
                 }
@@ -288,7 +288,7 @@ namespace BastardsMod
             TextObject textObject = new TextObject("{=*}{MOTHER.LINK} got pregnant with {FATHER.LINK}'s bastard child", null);
             StringHelpers.SetCharacterProperties("MOTHER", mother.CharacterObject, textObject, false);
             StringHelpers.SetCharacterProperties("FATHER", father.CharacterObject, textObject, false);
-            InformationManager.DisplayMessage(new InformationMessage(textObject.ToString()));
+            InformationManager.DisplayMessage(new InformationMessage(textObject.ToString(), Color.ConvertStringToColor("hA0A00000")));
             log(textObject.ToString());
         }
             private void log(string text)
