@@ -396,3 +396,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/BastardsMod/obj/Debug/BastardsMod.csproj.AssemblyReference.cache
+/BastardsMod/obj/Debug/BastardsMod.csproj.CoreCompileInputs.cache
+/BastardsMod/obj/Debug/BastardsMod.csproj.FileListAbsolute.txt
+/BastardsMod/obj/Debug/BastardsMod.pdb
+/BastardsMod/obj/Debug/build.force
+/BastardsMod/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache

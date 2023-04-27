@@ -4,3 +4,7 @@ C:\Users\37067\source\repos\BastardsMod\BastardsMod\obj\Debug\BastardsMod.csproj
 C:\Users\37067\source\repos\BastardsMod\BastardsMod\obj\Debug\BastardsMod.csproj.CoreCompileInputs.cache
 C:\Users\37067\source\repos\BastardsMod\BastardsMod\obj\Debug\BastardsMod.dll
 C:\Users\37067\source\repos\BastardsMod\BastardsMod\obj\Debug\BastardsMod.pdb
+C:\Users\37067\Documents\GitHub\BastardMod\BastardsMod\obj\Debug\BastardsMod.csproj.AssemblyReference.cache
+C:\Users\37067\Documents\GitHub\BastardMod\BastardsMod\obj\Debug\BastardsMod.csproj.CoreCompileInputs.cache
+C:\Users\37067\Documents\GitHub\BastardMod\BastardsMod\obj\Debug\BastardsMod.dll
+C:\Users\37067\Documents\GitHub\BastardMod\BastardsMod\obj\Debug\BastardsMod.pdb
