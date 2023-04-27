@@ -1,0 +1,6 @@
+C:\Users\37067\source\repos\BastardsMod\BastardsMod\bin\x64\Debug\BastardsMod.dll
+C:\Users\37067\source\repos\BastardsMod\BastardsMod\bin\x64\Debug\BastardsMod.pdb
+C:\Users\37067\source\repos\BastardsMod\BastardsMod\obj\x64\Debug\BastardsMod.csproj.AssemblyReference.cache
+C:\Users\37067\source\repos\BastardsMod\BastardsMod\obj\x64\Debug\BastardsMod.csproj.CoreCompileInputs.cache
+C:\Users\37067\source\repos\BastardsMod\BastardsMod\obj\x64\Debug\BastardsMod.dll
+C:\Users\37067\source\repos\BastardsMod\BastardsMod\obj\x64\Debug\BastardsMod.pdb

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BastardModConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PregnancyDurationInDays>28</PregnancyDurationInDays>
+  <BastardPregnancyBaseChance>0.05</BastardPregnancyBaseChance>
+  <BastardPregnancyEnabledForPlayerHero>true</BastardPregnancyEnabledForPlayerHero>
+  <ResistPregnancyWithBastardValor>0</ResistPregnancyWithBastardValor>
+  <ResistPregnancyWithBastardHonor>0</ResistPregnancyWithBastardHonor>
+  <ResistPregnancyWithBastardCalculating>1</ResistPregnancyWithBastardCalculating>
+  <ResistPregnancyIncestValor>-1</ResistPregnancyIncestValor>
+  <ResistPregnancyIncestHonor>-2</ResistPregnancyIncestHonor>
+  <ResistPregnancyIncestCalculating>1</ResistPregnancyIncestCalculating>
+  <BastardPregnancyHeroRelationMin>0</BastardPregnancyHeroRelationMin>
+  <BastardPregnancyMaxChildren>5</BastardPregnancyMaxChildren>
+  <DeliveringTwinsProbability>0.01</DeliveringTwinsProbability>
+  <StillbirthProbability>0.05</StillbirthProbability>
+  <DeliveringFemaleOffspringProbability>0.5</DeliveringFemaleOffspringProbability>
+  <MaternalMortalityProbabilityInLabor>0.01</MaternalMortalityProbabilityInLabor>
+  <file_name>F:\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\BastardsMod\bin\Win64_Shipping_Client\BastardModCfg.xml</file_name>
+</BastardModConfiguration>

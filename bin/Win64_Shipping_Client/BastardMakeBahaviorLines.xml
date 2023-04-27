@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DialogHelper xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <lines>
+    <Line type="player_line" id="to_make_bastard_persuasion_0" input="lord_talk_speak_diplomacy_2" output="start_persuade_to_make_bastard_persuasion" text="{=*}How about..? (start seduce)" priority="0">
+      <conditionD method="conversation_can_make_pregnant_with_bastard_on_condition" />
+      <consequenceD method="conversation_unblock_all_persuasion_task" />
+    </Line>
+    <Line type="npc_line" id="persuade_to_make_bastard_finished" input="persuade_to_make_bastard_finished" output="to_make_bastard_persuasion_caring" text="{=*}But you still like me right?[ib:nervous]" priority="0">
+      <conditionD method="conversation_make_pregnant_with_bastard_finished_on_condition" />
+      <consequenceD method="leave_encounter_on_consequence" />
+    </Line>
+    <Line type="player_line" id="to_make_bastard_persuasion_caring_0" input="to_make_bastard_persuasion_caring" output="close_window" text="{=*}Yes." priority="1">
+      <consequenceD method="change_relation_on_consequence" parameters="5" />
+    </Line>
+    <Line type="player_line" id="to_make_bastard_persuasion_caring_1" input="to_make_bastard_persuasion_caring" output="close_window" text="{=*}No." priority="0">
+      <consequenceD method="change_relation_on_consequence" parameters="-5" />
+    </Line>
+  </lines>
+  <dialogs>
+    <Dialog id="start_persuade_to_make_bastard_persuasion" input="start_persuade_to_make_bastard_persuasion" priority="125">
+      <Tasks>
+        <persuasionTask id="start_persuade_to_make_bastard_persuasion_task_0" spokenLine="spokenLine" immediateFailLine="immediateFailLine" finalFailLine="{=*}finalFailLine 1" tryLaterLine="{=*}tryLaterLine 1" reservationType="0">
+          <Options>
+            <persuasionOption defaultSkills="Charm" defaultTraits="Calculating" traitEffect="Positive" persuasionArgumentStrength="Hard" givesCriticalSuccess="false" line="{=*}Can we drink some tea?" canBlockOtherOption="false" canMoveToTheNextReservation="false" isInitiallyBlocked="false">
+              <traitCorrelations valor="0" mercy="0" honor="1" generosity="0" calculating="1" />
+              <optionReactions>
+                <reaction persuasionOptionResult="Success" text="Yes, lets drink some" />
+                <reaction persuasionOptionResult="CriticalSuccess" text="You are just in time![ib:happy]" />
+                <reaction persuasionOptionResult="Failure" text="No, I dont like tea[ib:nervous][ib:closed]" />
+                <reaction persuasionOptionResult="CriticalFailure" text="No, you I have no time for your tea![ib:closed][if:convo_bared_teeth][if:idle_angry][ib:aggressive]" />
+              </optionReactions>
+            </persuasionOption>
+            <persuasionOption defaultSkills="Leadership" defaultTraits="Valor" traitEffect="Positive" persuasionArgumentStrength="Hard" givesCriticalSuccess="false" line="{=*}I like how you look from behind." canBlockOtherOption="false" canMoveToTheNextReservation="false" isInitiallyBlocked="false">
+              <traitCorrelations valor="1" mercy="-1" honor="-1" generosity="0" calculating="-1" />
+              <optionReactions>
+                <reaction persuasionOptionResult="Success" text="Thanks." />
+                <reaction persuasionOptionResult="CriticalSuccess" text="Thanks, I like too![ib:happy]" />
+                <reaction persuasionOptionResult="Failure" text="No, you better dont look to my back[ib:nervous][ib:closed]" />
+                <reaction persuasionOptionResult="CriticalFailure" text="Are you kidding?[ib:closed][if:convo_bared_teeth][if:idle_angry][ib:aggressive]" />
+              </optionReactions>
+            </persuasionOption>
+            <persuasionOption defaultSkills="Leadership" defaultTraits="Mercy" traitEffect="Positive" persuasionArgumentStrength="Hard" givesCriticalSuccess="true" line="{=*}Let me show my bruises, I got them in last battle." canBlockOtherOption="true" canMoveToTheNextReservation="false" isInitiallyBlocked="false">
+              <traitCorrelations valor="1" mercy="1" honor="0" generosity="1" calculating="0" />
+              <optionReactions>
+                <reaction persuasionOptionResult="Success" text="Ok." />
+                <reaction persuasionOptionResult="CriticalSuccess" text="Ok, but I will show mine too![ib:happy]" />
+                <reaction persuasionOptionResult="Failure" text="No, not interested.[ib:nervous][ib:closed]" />
+                <reaction persuasionOptionResult="CriticalFailure" text="I do not care![ib:closed][if:convo_bared_teeth][if:idle_angry][ib:aggressive]" />
+              </optionReactions>
+            </persuasionOption>
+            <persuasionOption defaultSkills="Charm" defaultTraits="Honor" traitEffect="Positive" persuasionArgumentStrength="VeryHard" givesCriticalSuccess="true" line="{=*}I think I have seen you somewhere, oh yes I saw you in my dreams last night!" canBlockOtherOption="true" canMoveToTheNextReservation="false" isInitiallyBlocked="false">
+              <traitCorrelations valor="1" mercy="2" honor="0" generosity="0" calculating="0" />
+              <optionReactions>
+                <reaction persuasionOptionResult="Success" text="Ok." />
+                <reaction persuasionOptionResult="CriticalSuccess" text="Ok, but I saw you too![ib:happy]" />
+                <reaction persuasionOptionResult="Failure" text="Dream again...[ib:nervous][ib:closed]" />
+                <reaction persuasionOptionResult="CriticalFailure" text="I do not care about your dreams![ib:closed][if:convo_bared_teeth][if:idle_angry][ib:aggressive]" />
+              </optionReactions>
+            </persuasionOption>
+            <persuasionOption defaultSkills="Charm" defaultTraits="Mercy" traitEffect="Positive" persuasionArgumentStrength="VeryHard" givesCriticalSuccess="true" line="{=*}Ok so here I am, at least one of your wishes has finally come true!" canBlockOtherOption="true" canMoveToTheNextReservation="false" isInitiallyBlocked="false">
+              <traitCorrelations valor="0" mercy="2" honor="0" generosity="2" calculating="0" />
+              <optionReactions>
+                <reaction persuasionOptionResult="Success" text="Realy? You think like that?[ib:happy]" />
+                <reaction persuasionOptionResult="CriticalSuccess" text="Ohh, thank you, I'm pleased![ib:happy]" />
+                <reaction persuasionOptionResult="Failure" text="No, I've no wishes.[ib:nervous][ib:closed]" />
+                <reaction persuasionOptionResult="CriticalFailure" text="Go away![ib:closed][if:convo_bared_teeth][if:idle_angry][ib:aggressive]" />
+              </optionReactions>
+            </persuasionOption>
+          </Options>
+        </persuasionTask>
+        <persuasionTask id="start_persuade_to_make_bastard_persuasion_task_1" spokenLine="spokenLine" immediateFailLine="immediateFailLine" finalFailLine="{=*}No... No. It does not make sense." tryLaterLine="{=*}Maybe next time." reservationType="0">
+          <Options>
+            <persuasionOption defaultSkills="Charm" defaultTraits="Calculating" traitEffect="Positive" persuasionArgumentStrength="Hard" givesCriticalSuccess="false" line="{=*}Do you like melons? I swear I see at least two here!" canBlockOtherOption="false" canMoveToTheNextReservation="false" isInitiallyBlocked="false">
+              <traitCorrelations valor="-2" mercy="-2" honor="-1" generosity="0" calculating="-1" />
+              <optionReactions>
+                <reaction persuasionOptionResult="Success" text="Not sure, but I like melons.[ib:happy]" />
+                <reaction persuasionOptionResult="CriticalSuccess" text="I like them very much. Lets find out where they are?[ib:happy]" />
+                <reaction persuasionOptionResult="Failure" text="I do not have such things.[ib:nervous][ib:closed]" />
+                <reaction persuasionOptionResult="CriticalFailure" text="What melons?! Are you blind?[ib:closed][if:convo_bared_teeth][if:idle_angry][ib:aggressive]" />
+              </optionReactions>
+            </persuasionOption>
+            <persuasionOption defaultSkills="Leadership" defaultTraits="Valor" traitEffect="Positive" persuasionArgumentStrength="Hard" givesCriticalSuccess="false" line="{=*}Come to my place I will show my horse." canBlockOtherOption="false" canMoveToTheNextReservation="false" isInitiallyBlocked="false">
+              <traitCorrelations valor="2" mercy="-1" honor="-2" generosity="0" calculating="0" />
+              <optionReactions>
+                <reaction persuasionOptionResult="Success" text="Sure, I never saw your horse.[ib:happy]" />
+                <reaction persuasionOptionResult="CriticalSuccess" text="Definitely! Will you let me ride it?[ib:happy]" />
+                <reaction persuasionOptionResult="Failure" text="I see it from here. Not so interesting.[ib:nervous][ib:closed]" />
+                <reaction persuasionOptionResult="CriticalFailure" text="I don't want, I do not care about your horse.[ib:closed][if:convo_bared_teeth][if:idle_angry][ib:aggressive]" />
+              </optionReactions>
+            </persuasionOption>
+            <persuasionOption defaultSkills="Leadership" defaultTraits="Honor" traitEffect="Positive" persuasionArgumentStrength="Hard" givesCriticalSuccess="true" line="{=*}Let me show my {?PLAYER.GENDER}donut i baked today{?}huge sword{\?}!" canBlockOtherOption="true" canMoveToTheNextReservation="false" isInitiallyBlocked="false">
+              <traitCorrelations valor="1" mercy="1" honor="-2" generosity="1" calculating="-2" />
+              <optionReactions>
+                <reaction persuasionOptionResult="Success" text="Sure, I never saw your {?PLAYER.GENDER}donut{?}huge sword{\?}.[ib:happy]" />
+                <reaction persuasionOptionResult="CriticalSuccess" text="Definitely! Will you let me {?PLAYER.GENDER}taste donut{?}hold your huge sword{\?}?[ib:happy]" />
+                <reaction persuasionOptionResult="Failure" text="I see it from here. Not so interesting.[ib:nervous][ib:closed]" />
+                <reaction persuasionOptionResult="CriticalFailure" text="I don't want, I do not care.[ib:closed][if:convo_bared_teeth][if:idle_angry][ib:aggressive]" />
+              </optionReactions>
+            </persuasionOption>
+            <persuasionOption defaultSkills="Charm" defaultTraits="Honor" traitEffect="Positive" persuasionArgumentStrength="VeryHard" givesCriticalSuccess="true" line="{=*}Let me show my ass!" canBlockOtherOption="true" canMoveToTheNextReservation="false" isInitiallyBlocked="false">
+              <traitCorrelations valor="2" mercy="2" honor="-2" generosity="-1" calculating="-2" />
+              <optionReactions>
+                <reaction persuasionOptionResult="Success" text="Nice.[ib:happy]" />
+                <reaction persuasionOptionResult="CriticalSuccess" text="Will you let me touch it?[ib:happy]" />
+                <reaction persuasionOptionResult="Failure" text="No, I do not want to see it.[ib:nervous][ib:closed]" />
+                <reaction persuasionOptionResult="CriticalFailure" text="Don't! What is wrong with you?.[ib:closed][if:convo_bared_teeth][if:idle_angry][ib:aggressive]" />
+              </optionReactions>
+            </persuasionOption>
+            <persuasionOption defaultSkills="Charm" defaultTraits="Mercy" traitEffect="Positive" persuasionArgumentStrength="VeryHard" givesCriticalSuccess="true" line="{=*}You are such an angel! We must talk about it now!" canBlockOtherOption="true" canMoveToTheNextReservation="false" isInitiallyBlocked="false">
+              <traitCorrelations valor="0" mercy="-2" honor="-2" generosity="-2" calculating="0" />
+              <optionReactions>
+                <reaction persuasionOptionResult="Success" text="Realy? You think like that?[ib:nervous]" />
+                <reaction persuasionOptionResult="CriticalSuccess" text="Ohh, thank you very much![ib:happy]" />
+                <reaction persuasionOptionResult="Failure" text="No, I'm not.[ib:nervous][ib:closed]" />
+                <reaction persuasionOptionResult="CriticalFailure" text="Keep your angel thing to your self![ib:closed][if:convo_bared_teeth][if:idle_angry][ib:aggressive]" />
+              </optionReactions>
+            </persuasionOption>
+          </Options>
+        </persuasionTask>
+      </Tasks>
+      <lines>
+        <Line type="npc_line" id="start_persuade_to_make_bastard_persuasion" input="start_persuade_to_make_bastard_persuasion" output="persuade_to_make_bastard_reservation" text="{=*}Uh, wha...{COMMENT}" priority="0">
+          <conditionD method="start_persuade_to_make_bastard_on_condition" />
+          <consequenceD method="persuasion_start" parameters="6 3 1 2 3 0 Hard" />
+        </Line>
+        <Line type="npc_line" id="persuade_to_make_bastard_rejected" input="persuade_to_make_bastard_reservation" output="persuade_to_make_bastard_failed" text="{=!}{FAILED_PERSUASION_LINE}" priority="0">
+          <conditionD method="persuade_to_make_bastard_failed_on_condition" />
+          <consequenceD method="end_persuasion_on_consequence" />
+        </Line>
+        <Line type="npc_line" id="persuade_to_make_bastard_reservation" input="persuade_to_make_bastard_reservation" output="persuade_to_make_bastard_select_option" text="{=*}So... What is it?" priority="0">
+          <conditionD method="persuade_to_make_bastard_not_failed_on_condition" />
+        </Line>
+        <Line type="player_line" id="persuade_to_make_bastard_select_option_0" input="persuade_to_make_bastard_select_option" output="persuade_to_make_bastard_select_option_response" text="{=!}{PERSUADE_TEXT_0}" priority="0">
+          <conditionD method="persuasion_select_option_on_condition" parameters="0" />
+          <consequenceD method="persuasion_block_select_option_on_consequence" parameters="0" />
+          <cConditionD method="persuasion_clickable_option_on_condition" parameters="0" />
+          <pOptionD method="persuasion_setup_option" parameters="0" />
+        </Line>
+        <Line type="player_line" id="persuade_to_make_bastard_select_option_1" input="persuade_to_make_bastard_select_option" output="persuade_to_make_bastard_select_option_response" text="{=!}{PERSUADE_TEXT_1}" priority="0">
+          <conditionD method="persuasion_select_option_on_condition" parameters="1" />
+          <consequenceD method="persuasion_block_select_option_on_consequence" parameters="1" />
+          <cConditionD method="persuasion_clickable_option_on_condition" parameters="1" />
+          <pOptionD method="persuasion_setup_option" parameters="1" />
+        </Line>
+        <Line type="player_line" id="persuade_to_make_bastard_select_option_2" input="persuade_to_make_bastard_select_option" output="persuade_to_make_bastard_select_option_response" text="{=!}{PERSUADE_TEXT_2}" priority="0">
+          <conditionD method="persuasion_select_option_on_condition" parameters="2" />
+          <consequenceD method="persuasion_block_select_option_on_consequence" parameters="2" />
+          <cConditionD method="persuasion_clickable_option_on_condition" parameters="2" />
+          <pOptionD method="persuasion_setup_option" parameters="2" />
+        </Line>
+        <Line type="player_line" id="persuade_to_make_bastard_select_option_3" input="persuade_to_make_bastard_select_option" output="persuade_to_make_bastard_select_option_response" text="{=!}{PERSUADE_TEXT_3}" priority="0">
+          <conditionD method="persuasion_select_option_on_condition" parameters="3" />
+          <consequenceD method="persuasion_block_select_option_on_consequence" parameters="3" />
+          <cConditionD method="persuasion_clickable_option_on_condition" parameters="3" />
+          <pOptionD method="persuasion_setup_option" parameters="3" />
+        </Line>
+        <Line type="player_line" id="persuade_to_make_bastard_select_option_4" input="persuade_to_make_bastard_select_option" output="persuade_to_make_bastard_select_option_response" text="{=!}{PERSUADE_TEXT_4}" priority="0">
+          <conditionD method="persuasion_select_option_on_condition" parameters="4" />
+          <consequenceD method="persuasion_block_select_option_on_consequence" parameters="4" />
+          <cConditionD method="persuasion_clickable_option_on_condition" parameters="4" />
+          <pOptionD method="persuasion_setup_option" parameters="4" />
+        </Line>
+        <Line type="npc_line" id="persuade_to_make_bastard_select_option_response" input="persuade_to_make_bastard_select_option_response" output="persuade_to_make_bastard_reservation" text="{=*}{PERSUASION_REACTION}" priority="0">
+          <conditionD method="persuasion_selected_option_response_on_condition" />
+          <consequenceD method="persuasion_selected_option_response_on_consequence" />
+        </Line>
+        <Line type="npc_line" id="persuade_to_make_bastard_failed" input="persuade_to_make_bastard_failed" output="close_window" text="{=*}Go away {?PLAYER.GENDER}slut{?}pervert{\?}!" priority="0">
+          <consequenceD method="persuade_to_make_bastard_failed_on_consequence" />
+        </Line>
+        <Line type="npc_line" id="persuade_to_make_bastard_success" input="persuade_to_make_bastard_reservation" output="persuade_to_make_bastard_finished" text="{=*}Ohh..." priority="0">
+          <conditionD method="persuasion_success_on_condition" />
+          <consequenceD method="conversation_make_pregnant_with_bastard_on_consequence" />
+        </Line>
+      </lines>
+    </Dialog>
+  </dialogs>
+</DialogHelper>
